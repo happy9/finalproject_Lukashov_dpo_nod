@@ -5,13 +5,20 @@ from valutatrade_hub.core.usecases import (
     register_user,
     login_user,
     show_portfolio,
-    buy_currency,
-    sell_currency,
+    buy,
+    sell,
     get_rate,
 )
 
+from valutatrade_hub.core.exceptions import (
+    InsufficientFundsError,
+    CurrencyNotFoundError,
+    ApiRequestError,
+)
 
 PROMPT = "> "
+
+_current_session: dict | None = None
 
 
 def _get_arg(args: list[str], name: str) -> Optional[str]:
@@ -59,15 +66,29 @@ def run_cli() -> None:
                     print("Использование: login --username <str> --password <str>")
                     continue
 
-                result = login_user(username, password)
-                print(result)
+                global _current_session
+                _current_session = login_user(username, password)
+                print(f"Вы вошли как '{_current_session['username']}'")
+
 
             elif command == "show-portfolio":
-                base = _get_arg(args, "--base") or "USD"
-                result = show_portfolio(base)
+                if _current_session is None:
+                    print("Сначала выполните login")
+                    continue
+                if _current_session is None:
+                    print("Сначала выполните login")
+                    continue
+
+                base = _get_arg(args, "--base")
+                result = show_portfolio(user_id=_current_session["user_id"], base=base)
                 print(result)
 
+
             elif command == "buy":
+                if _current_session is None:
+                    print("Сначала выполните login")
+                    continue
+
                 currency = _get_arg(args, "--currency")
                 amount_str = _get_arg(args, "--amount")
 
@@ -81,10 +102,22 @@ def run_cli() -> None:
                     print("'amount' должен быть положительным числом")
                     continue
 
-                result = buy_currency(currency, amount)
+                if _current_session is None:
+                    print("Сначала выполните login")
+                    continue
+
+                result = buy(
+                    user_id=_current_session["user_id"],
+                    currency_code=currency,
+                    amount=amount,
+                )
                 print(result)
 
             elif command == "sell":
+                if _current_session is None:
+                    print("Сначала выполните login")
+                    continue
+                
                 currency = _get_arg(args, "--currency")
                 amount_str = _get_arg(args, "--amount")
 
@@ -98,8 +131,17 @@ def run_cli() -> None:
                     print("'amount' должен быть положительным числом")
                     continue
 
-                result = sell_currency(currency, amount)
+                if _current_session is None:
+                    print("Сначала выполните login")
+                    continue
+
+                result = sell(
+                    user_id=_current_session["user_id"],
+                    currency_code=currency,
+                    amount=amount,
+                )
                 print(result)
+
 
             elif command == "get-rate":
                 frm = _get_arg(args, "--from")
@@ -115,6 +157,14 @@ def run_cli() -> None:
             else:
                 print(f"Неизвестная команда: {command}")
 
+        except InsufficientFundsError as e:
+            print(str(e))
+        except CurrencyNotFoundError as e:
+            print(str(e))
+            print("Подсказка: используйте get-rate --from <CODE> --to <CODE> или проверьте список поддерживаемых валют.")
+        except ApiRequestError as e:
+            print(str(e))
+            print("Повторите попытку позже или проверьте сеть/источник курсов.")
         except Exception as e:
             print(e)
 

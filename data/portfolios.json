@@ -1,10 +1,14 @@
 [
   {
     "user_id": 1,
-    "wallets": {
-      "BTC": {
-        "balance": 5.0
-      }
-    }
+    "wallets": {}
+  },
+  {
+    "user_id": 2,
+    "wallets": {}
+  },
+  {
+    "user_id": 3,
+    "wallets": {}
   }
 ]

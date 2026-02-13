@@ -5,6 +5,8 @@ import secrets
 from datetime import datetime
 from typing import Dict
 
+from valutatrade_hub.core.exceptions import InsufficientFundsError
+
 class User:
     def __init__(
         self,
@@ -108,7 +110,14 @@ class Wallet:
         if amount <= 0:
             raise ValueError("Сумма снятия должна быть положительной.")
         if amount > self._balance:
-            raise ValueError("Недостаточно средств на балансе.")
+            def fmt(cur: str, v: float) -> str:
+                return f"{v:.4f}" if cur in ("BTC", "ETH") else f"{v:.2f}"
+
+            raise InsufficientFundsError(
+                available=fmt(self.currency_code, self._balance),
+                required=fmt(self.currency_code, float(amount)),
+                code=self.currency_code,
+            )
 
         self._balance -= float(amount)
 

@@ -1,0 +1,11 @@
+INFO 2026-02-13T04:27:12 LOGIN user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Пользователь 'Kirill' не найден"
+INFO 2026-02-13T04:27:24 REGISTER user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-13T04:27:37 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-13T20:35:55 REGISTER user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Имя пользователя 'Kirill' уже занято"
+INFO 2026-02-13T20:36:22 REGISTER user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Пароль должен быть не короче 4 символов"
+INFO 2026-02-13T20:36:35 REGISTER user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-13T20:41:48 LOGIN user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Пользователь 'kirrer' не найден"
+INFO 2026-02-13T20:42:10 LOGIN user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Неверный пароль"
+INFO 2026-02-13T20:42:38 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-13T20:46:41 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-13T20:49:02 LOGIN user='None' currency='None' amount=None base='None' result=OK

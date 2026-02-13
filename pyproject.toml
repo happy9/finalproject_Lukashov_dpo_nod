@@ -29,3 +29,12 @@ exclude = ["venv", ".venv", "dist", "__pycache__", ".git"]
 [tool.ruff.lint]
 select = ["E", "F", "I"]
 ignore = []
+
+
+[tool.valutatrade]
+data_dir = "data"
+rates_ttl_seconds = 300
+default_base_currency = "USD"
+log_dir = "logs"
+log_level = "INFO"
+log_format = "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
