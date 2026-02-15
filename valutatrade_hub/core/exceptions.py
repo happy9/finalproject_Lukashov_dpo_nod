@@ -3,7 +3,8 @@ class InsufficientFundsError(Exception):
 
     def __init__(self, available: str, required: str, code: str) -> None:
         super().__init__(
-            f"Недостаточно средств: доступно {available} {code}, требуется {required} {code}"
+            f"Недостаточно средств: доступно {available} {code}, "
+            f"требуется {required} {code}"
         )
 
 

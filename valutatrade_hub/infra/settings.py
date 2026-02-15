@@ -1,7 +1,6 @@
+import tomllib
 from pathlib import Path
 from typing import Any
-
-import tomllib
 
 
 class SettingsLoader:
@@ -9,7 +8,8 @@ class SettingsLoader:
     Singleton (через __new__):
     - простой и читаемый способ
     - гарантирует один экземпляр на приложение
-    - исключает создание дополнительных экземпляров при повторных импортах/создании объекта
+    - исключает создание дополнительных экземпляров \
+при повторных импортах/создании объекта
     """
 
     _instance: "SettingsLoader | None" = None

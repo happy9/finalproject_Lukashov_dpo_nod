@@ -19,5 +19,33 @@
     "hashed_password": "8b5d662731d192d448d7a8799e67521090dd2a482f6f527150365e05aafee57c",
     "salt": "IFgbPEdxdi4",
     "registration_date": "2026-02-13T20:36:35.663786"
+  },
+  {
+    "user_id": 4,
+    "username": "alice",
+    "hashed_password": "d626840b64f1cde234d8898c5182f94f89ae64765d6d661d47f67b1ea6d4b306",
+    "salt": "SO_FZjsra-4",
+    "registration_date": "2026-02-15T03:31:21.717512"
+  },
+  {
+    "user_id": 5,
+    "username": "Popov",
+    "hashed_password": "42501a92a10b44f2a2a2895b8941993743249f2d7c6e192dc088a176791e4b36",
+    "salt": "V_nzyq2jI88",
+    "registration_date": "2026-02-15T03:31:49.482888"
+  },
+  {
+    "user_id": 6,
+    "username": "demo",
+    "hashed_password": "65188203f5ca9e16aa1404746f439433c3ce3200a6d0911063557a5c55b0a1c1",
+    "salt": "Ux1h1kRQ-v8",
+    "registration_date": "2026-02-15T04:22:55.892671"
+  },
+  {
+    "user_id": 7,
+    "username": "Demo",
+    "hashed_password": "5dc06758aded78cce3989f1ab7cb8a309af620f5684ebf651a07caa766297b27",
+    "salt": "kG62cGwmH-M",
+    "registration_date": "2026-02-15T04:29:42.407139"
   }
 ]

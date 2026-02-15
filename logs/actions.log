@@ -9,3 +9,68 @@ INFO 2026-02-13T20:42:10 LOGIN user='None' currency='None' amount=None base='Non
 INFO 2026-02-13T20:42:38 LOGIN user='None' currency='None' amount=None base='None' result=OK
 INFO 2026-02-13T20:46:41 LOGIN user='None' currency='None' amount=None base='None' result=OK
 INFO 2026-02-13T20:49:02 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T03:31:21 REGISTER user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T03:31:49 REGISTER user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T03:32:56 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T03:33:11 LOGIN user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Неверный пароль"
+INFO 2026-02-15T03:45:29 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T03:46:12 BUY user='None' currency='None' amount=0.05 base='None' result=OK
+INFO 2026-02-15T03:46:29 BUY user='None' currency='None' amount=100.0 base='None' result=OK
+INFO 2026-02-15T03:46:54 SELL user='None' currency='None' amount=0.01 base='None' result=OK
+INFO 2026-02-15T03:47:07 SELL user='None' currency='None' amount=999.0 base='None' result=ERROR error_type=InsufficientFundsError error_message="Недостаточно средств: доступно 0.0400 {code}, требуется {required} {code}"
+INFO 2026-02-15T03:48:41 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T03:48:53 SELL user='None' currency='None' amount=999.0 base='None' result=ERROR error_type=InsufficientFundsError error_message="Недостаточно средств: доступно 0.0400 BTC, требуется 999.0000 BTC"
+INFO 2026-02-15T03:49:03 SELL user='None' currency='None' amount=1.0 base='None' result=ERROR error_type=CurrencyNotFoundError error_message="Неизвестная валюта 'SOL'"
+INFO 2026-02-15T03:50:12 ParserService update start at 2026-02-15T03:50:12Z (clients=2)
+INFO 2026-02-15T03:50:12 Fetching rates from CoinGecko ...
+INFO 2026-02-15T03:50:12 Fetching from CoinGecko failed (unexpected): 'ParserConfig' object has no attribute 'BASE_FIAT_CURRENCY'
+INFO 2026-02-15T03:50:12 Fetching rates from ExchangeRate-API ...
+INFO 2026-02-15T03:50:13 Fetching from ExchangeRate-API failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T03:50:13 ParserService update finished: NO DATA (last_refresh=2026-02-15T03:50:13Z)
+INFO 2026-02-15T03:58:50 ParserService update start at 2026-02-15T03:58:50Z (clients=2)
+INFO 2026-02-15T03:58:50 Fetching rates from CoinGecko ...
+INFO 2026-02-15T03:58:51 Fetching from CoinGecko failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T03:58:51 Fetching rates from ExchangeRate-API ...
+INFO 2026-02-15T03:58:51 Fetching from ExchangeRate-API failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T03:58:51 ParserService update finished: NO DATA (last_refresh=2026-02-15T03:58:51Z)
+INFO 2026-02-15T04:07:50 ParserService update start at 2026-02-15T04:07:50Z (clients=2)
+INFO 2026-02-15T04:07:50 Fetching rates from CoinGecko ...
+INFO 2026-02-15T04:07:50 Fetched 3 rates from CoinGecko (OK)
+INFO 2026-02-15T04:07:50 Fetching rates from ExchangeRate-API ...
+INFO 2026-02-15T04:07:50 Fetching from ExchangeRate-API failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T04:07:50 Saving snapshot to rates.json (pairs=3)...
+INFO 2026-02-15T04:07:50 Appending history records (count=3)...
+INFO 2026-02-15T04:07:50 ParserService update finished OK at 2026-02-15T04:07:50Z
+INFO 2026-02-15T04:22:39 REGISTER user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Имя пользователя 'kirill' уже занято"
+INFO 2026-02-15T04:22:55 REGISTER user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T04:23:12 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T04:23:25 ParserService update start at 2026-02-15T04:23:25Z (clients=2)
+INFO 2026-02-15T04:23:25 Fetching rates from CoinGecko ...
+INFO 2026-02-15T04:23:26 Fetched 3 rates from CoinGecko (OK)
+INFO 2026-02-15T04:23:26 Fetching rates from ExchangeRate-API ...
+INFO 2026-02-15T04:23:26 Fetching from ExchangeRate-API failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T04:23:26 Saving snapshot to rates.json (pairs=3)...
+INFO 2026-02-15T04:23:26 Appending history records (count=3)...
+INFO 2026-02-15T04:23:26 ParserService update finished OK at 2026-02-15T04:23:26Z
+INFO 2026-02-15T04:28:24 ParserService update start at 2026-02-15T04:28:24Z (clients=2)
+INFO 2026-02-15T04:28:24 Fetching rates from CoinGecko ...
+INFO 2026-02-15T04:28:24 Fetched 3 rates from CoinGecko (OK)
+INFO 2026-02-15T04:28:24 Fetching rates from ExchangeRate-API ...
+INFO 2026-02-15T04:28:24 Fetching from ExchangeRate-API failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T04:28:24 Saving snapshot to rates.json (pairs=3)...
+INFO 2026-02-15T04:28:24 Appending history records (count=3)...
+INFO 2026-02-15T04:28:24 ParserService update finished OK at 2026-02-15T04:28:24Z
+INFO 2026-02-15T04:29:27 REGISTER user='None' currency='None' amount=None base='None' result=ERROR error_type=ValueError error_message="Имя пользователя 'kirill' уже занято"
+INFO 2026-02-15T04:29:42 REGISTER user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T04:29:55 LOGIN user='None' currency='None' amount=None base='None' result=OK
+INFO 2026-02-15T04:30:07 ParserService update start at 2026-02-15T04:30:07Z (clients=2)
+INFO 2026-02-15T04:30:07 Fetching rates from CoinGecko ...
+INFO 2026-02-15T04:30:07 Fetched 3 rates from CoinGecko (OK)
+INFO 2026-02-15T04:30:07 Fetching rates from ExchangeRate-API ...
+INFO 2026-02-15T04:30:08 Fetching from ExchangeRate-API failed: Ошибка при обращении к внешнему API: ExchangeRate-API: поле 'rates' отсутствует или имеет неверный тип.
+INFO 2026-02-15T04:30:08 Saving snapshot to rates.json (pairs=3)...
+INFO 2026-02-15T04:30:08 Appending history records (count=3)...
+INFO 2026-02-15T04:30:08 ParserService update finished OK at 2026-02-15T04:30:08Z
+INFO 2026-02-15T04:31:02 BUY user='None' currency='None' amount=0.05 base='None' result=OK
+INFO 2026-02-15T04:31:30 SELL user='None' currency='None' amount=0.01 base='None' result=OK
+INFO 2026-02-15T04:31:57 SELL user='None' currency='None' amount=999.0 base='None' result=ERROR error_type=InsufficientFundsError error_message="Недостаточно средств: доступно 0.0400 BTC, требуется 999.0000 BTC"

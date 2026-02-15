@@ -3,9 +3,9 @@ from __future__ import annotations
 import hashlib
 import secrets
 from datetime import datetime
-from typing import Dict
 
 from valutatrade_hub.core.exceptions import InsufficientFundsError
+
 
 class User:
     def __init__(
@@ -70,8 +70,8 @@ class User:
 
         self._salt = new_salt
         self._hashed_password = new_hash
-        
-        
+
+
 class Wallet:
     def __init__(self, currency_code: str, balance: float = 0.0) -> None:
         if not isinstance(currency_code, str) or not currency_code.strip():
@@ -110,6 +110,7 @@ class Wallet:
         if amount <= 0:
             raise ValueError("Сумма снятия должна быть положительной.")
         if amount > self._balance:
+
             def fmt(cur: str, v: float) -> str:
                 return f"{v:.4f}" if cur in ("BTC", "ETH") else f"{v:.2f}"
 

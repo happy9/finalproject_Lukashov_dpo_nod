@@ -30,7 +30,9 @@ class Currency(ABC):
             raise TypeError("code должен быть строкой.")
         v = value.strip()
         if not v or " " in v or not (2 <= len(v) <= 5) or v != v.upper():
-            raise ValueError("code должен быть в верхнем регистре, 2–5 символов, без пробелов.")
+            raise ValueError(
+                "code должен быть в " + "верхнем регистре, 2–5 символов, без пробелов."
+            )
         self._code = v
 
     @abstractmethod
@@ -86,14 +88,21 @@ class CryptoCurrency(Currency):
         self._market_cap = float(value)
 
     def get_display_info(self) -> str:
-        return f"[CRYPTO] {self.code} — {self.name} (Algo: {self.algorithm}, MCAP: {self.market_cap:.2e})"
+        return (
+            f"[CRYPTO] {self.code} — {self.name} "
+            + "(Algo: {self.algorithm}, MCAP: {self.market_cap:.2e})"
+        )
 
 
 _CURRENCY_REGISTRY: dict[str, Currency] = {
     "USD": FiatCurrency(name="US Dollar", code="USD", issuing_country="United States"),
     "EUR": FiatCurrency(name="Euro", code="EUR", issuing_country="Eurozone"),
-    "BTC": CryptoCurrency(name="Bitcoin", code="BTC", algorithm="SHA-256", market_cap=1.12e12),
-    "ETH": CryptoCurrency(name="Ethereum", code="ETH", algorithm="Ethash", market_cap=4.50e11),
+    "BTC": CryptoCurrency(
+        name="Bitcoin", code="BTC", algorithm="SHA-256", market_cap=1.12e12
+    ),
+    "ETH": CryptoCurrency(
+        name="Ethereum", code="ETH", algorithm="Ethash", market_cap=4.50e11
+    ),
 }
 
 

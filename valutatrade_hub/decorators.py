@@ -2,9 +2,6 @@ import logging
 from functools import wraps
 from typing import Any, Callable
 
-from valutatrade_hub.infra.settings import SettingsLoader
-
-
 logger = logging.getLogger("valutatrade")
 
 
@@ -36,7 +33,7 @@ def log_action(action: str, verbose: bool = False) -> Callable:
             except Exception as e:
                 logger.info(
                     "%s user='%s' currency='%s' amount=%s base='%s' "
-                    "result=ERROR error_type=%s error_message=\"%s\"",
+                    'result=ERROR error_type=%s error_message="%s"',
                     action,
                     username,
                     currency,
